@@ -8,3 +8,28 @@
 </div>
 <h1><center>Blocitoff</center></h1>
 <p>A self-destructing to-do list to keep you focused on the things that really matter.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+
+      <th>Days Left</th>
+      <th>Complete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo.each do |todo| %>
+      <tr>
+        <td><%= todo.description %></td>
+        <td><%= todo.created_at %></td>
+        <td><%= check_box 'Destroy', todo, method: :delete%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todo list', new_todo_path %>
