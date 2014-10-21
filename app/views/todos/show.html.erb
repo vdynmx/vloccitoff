@@ -1,1 +1,22 @@
-<p><b><%= @todo.description %></b></p>
+<h1>Listing todos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo.each do |todo| %>
+      <tr>
+        <td><%= todo.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todo list', new_todo_path %>
