@@ -38,6 +38,7 @@ end
 
 gem 'devise'
 gem 'figaro', '1.0'
+gem 'whenever'
 
 
 # Use ActiveModel has_secure_password
