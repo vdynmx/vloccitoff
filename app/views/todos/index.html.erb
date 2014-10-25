@@ -23,7 +23,7 @@
     <% @todo.each do |todo| %>
       <tr>
         <td><%= todo.description %></td>
-        <td><%= todo.created_at %></td>
+        <td><%= @todo.daysleft %></td>
         <td><%= check_box 'Destroy', todo, method: :delete%></td>
       </tr>
     <% end %>

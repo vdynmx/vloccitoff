@@ -25,6 +25,7 @@ class TodosController < ApplicationController
     @todo.destroy
   end
 
+
    private
 
    def set_todo
