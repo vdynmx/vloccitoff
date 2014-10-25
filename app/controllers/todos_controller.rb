@@ -29,7 +29,7 @@ class TodosController < ApplicationController
    private
 
    def set_todo
-    @todo = Todo.find(parans[:id])
+    @todo = Todo.find(params[:id])
   end
  
    def todo_params
