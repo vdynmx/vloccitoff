@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todo = Todo.all
+    @todos = Todo.all
   end
 
   def show
@@ -23,6 +23,8 @@ class TodosController < ApplicationController
   
   def destroy
     @todo.destroy
+
+    redirect_to todos_path
   end
 
 

@@ -20,11 +20,11 @@
   </thead>
 
   <tbody>
-    <% @todo.each do |todo| %>
+    <% @todos.each do |todo| %>
       <tr>
         <td><%= todo.description %></td>
-        <td><%= @todo.daysleft %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete%></td>
+        <td><%= todo.days_left %></td>
+        <td><%= link_to 'Destroy', todo, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
