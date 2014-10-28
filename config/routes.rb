@@ -1,5 +1,5 @@
 Blocitoff::Application.routes.draw do
-  root "todos#index"
+  root to: "todos#index"
   devise_for :users
   resources :todos
 end
