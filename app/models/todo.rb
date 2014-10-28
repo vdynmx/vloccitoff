@@ -1,4 +1,8 @@
 class Todo < ActiveRecord::Base
+  belongs_to :user
+
+  default_scope { order('created_at DESC') }
+  
   require 'date'
   def Todo.delete_all_todos
     Todo.where("created_at <= ?", Time.now - 7.days).destroy_all

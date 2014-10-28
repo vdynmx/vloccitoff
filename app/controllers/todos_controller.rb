@@ -5,6 +5,7 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.all
+      authorize @todos
   end
 
   def show
@@ -12,20 +13,23 @@ class TodosController < ApplicationController
 
   def new
     @todo = Todo.new
+      authorize @todo
   end
 
   def edit
+    @todo = Todo.find(params[:id])
+     authorize @todo
   end
 
   def create
-     @todo = Todo.new(todo_params)
+     @todo = current_user.todos.build(todo_params)
+      authorize @todo
      @todo.save!
      redirect_to @todo, notice: 'Your new TODO was saved'
   end
   
   def destroy
     @todo.destroy
-
     redirect_to todos_path
   end
 
@@ -34,7 +38,7 @@ class TodosController < ApplicationController
 
    def set_todo
     @todo = Todo.find(params[:id])
-  end
+   end
  
    def todo_params
      params.require(:todo).permit(:description)

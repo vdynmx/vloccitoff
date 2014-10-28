@@ -39,6 +39,7 @@ end
 gem 'devise'
 gem 'figaro', '1.0'
 gem 'whenever'
+gem 'pundit'
 
 
 # Use ActiveModel has_secure_password
